@@ -125,7 +125,6 @@ header nav.menu-desktop ul li {
 .menu-mobile .btn-fechar i{
     color: var(--cor2);
     font-size: 30px;
-    cursor: pointer;
 
 }
 
