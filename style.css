@@ -89,10 +89,13 @@ header nav.menu-desktop ul li {
 
 /* Estilo Menu Mobile */
 
+
 .btn-abrir-menu i{
     color: var(--cor2);
     font-size: 40px;
+    display: none;
 }
+
 
 .menu-mobile{
     background-color: black;
@@ -103,10 +106,20 @@ header nav.menu-desktop ul li {
     z-index: 99999;
     width: 0%;
     overflow: hidden;
+    transition: .4s;
+}
+
+.menu-mobile.abrir-menu{
+    width: 70%;
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menumob{
+    display: block;
 }
 
 .menu-mobile .btn-fechar{
     padding: 20px 5%;
+    cursor: pointer;
 }
 
 .menu-mobile .btn-fechar i{
@@ -134,7 +147,7 @@ header nav.menu-desktop ul li {
 }
 
 .overlay-menumob{
-    background-color: rgba(0, 0, 0, 0.514);
+    background-color: rgba(0, 0, 0, 0.651);
     width: 100%;
     height: 100%;
     position: fixed;
@@ -479,5 +492,7 @@ footer .line-footer p a{
     footer .line-footer{
         text-align: center;
     }
-    
+    .btn-abrir-menu i{
+        display: block;
+    }
 }
