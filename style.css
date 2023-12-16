@@ -338,3 +338,29 @@ footer .line-footer p i{
 footer .line-footer p a{
     color: var(--cor0);   
 }
+
+
+                                /* Ajustando Responsividade */
+
+@media screen and (max-width: 1020px){
+
+    /* Classes gerais */
+    .flex{
+        flex-direction: column;
+    }
+
+
+    /* cabeçalho */
+    .menu-desktop, .btn-contato{
+        display: none;
+    }
+
+    /* Topo do site */
+    
+    section.topo-do-site{
+        padding: 20px 4%;
+    }
+    .topo-do-site h1 {
+        font-size: 30px
+    }
+}
