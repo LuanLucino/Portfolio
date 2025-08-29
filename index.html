@@ -24,15 +24,15 @@
 
       <nav class="menu-desktop" aria-label="Menu principal">
         <ul>
-          <li><a href="#">Início</a></li>
-          <li><a href="#">Especialidades</a></li>
-          <li><a href="#">Sobre</a></li>
-          <li><a href="#">Projetos</a></li>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#especialidades">Especialidades</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
         </ul>
       </nav>
 
       <div class="btn-contato">
-        <a href="#"><button>Contato</button></a>
+        <a href="#contato"><button> Contato</button></a>
       </div>
 
       <div class="btn-abrir-menu" id="btn-menu">
@@ -45,11 +45,11 @@
         </div>
         <nav aria-label="Menu mobile">
           <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Especialidades</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Projetos</a></li>
-            <li><a href="#">Contato</a></li>
+              <li><a href="#inicio">Início</a></li>
+              <li><a href="#especialidades">Especialidades</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#portfolio">Projetos</a></li>
+              <li><a href="#contato">Contato</a></li>
           </ul>
         </nav>
       </div>
@@ -59,14 +59,14 @@
   </header>
 
   <main>
-    <section class="topo-do-site">
+    <section id="inicio" class="topo-do-site">
       <div class="interface">
         <div class="flex">
           <div class="txt-topo-site">
             <h1>TRANSFORMANDO IDEIAS EM REALIDADE DIGITAL <span>.</span></h1>
             <p>Criatividade e inovação andam lado a lado. Com uma combinação única de design impactante, funcionalidade intuitiva e otimização para resultados, estou pronto para criar a presença online dos seus sonhos.</p>
             <div class="btn-contato">
-              <a href="#"><button>Entre em Contato</button></a>
+              <a href="#contato"><button>Entre em Contato</button></a>
             </div>
           </div>
 
@@ -77,7 +77,7 @@
       </div>
     </section>
 
-    <section class="especialidades">
+    <section id="especialidades" class="especialidades">
       <div class="interface">
         <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
         <div class="flex">
@@ -102,7 +102,7 @@
       </div>
     </section>
 
-    <section class="sobre">
+    <section id="sobre" class="sobre">
       <div class="interface">
         <div class="flex">
           <div class="img-sobre">
@@ -113,8 +113,8 @@
             <h2>MUITO PRAZER, <span>SOU LUAN LUCINO.</span></h2>
             <p>Formado em Análise e Desenvolvimento de Sistemas, apaixonado por jogos e tecnologia. Tenho me dedicado a desenvolver projetos como um cardápio digital e uma página sobre o sistema Android. Também estudo C# para desenvolvimento de jogos e aprimoro constantemente meu inglês, essencial para minha carreira.</p>
             <div class="btn-social">
-              <a href="#"><button><i class="bi bi-instagram"></i></button></a>
-              <a href="#"><button><i class="bi bi-youtube"></i></button></a>
+              <a href="https://github.com/LuanLucino" target="_blank"><button><i class="bi bi-github"></i></button></a>
+              <a href="https://www.instagram.com/luan_lucino/" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
               <a href="https://www.linkedin.com/in/luanlucino/" target="_blank"><button><i class="bi bi-linkedin"></i></button></a>
             </div>
           </div>
@@ -122,27 +122,28 @@
       </div>
     </section>
 
-<section class="portfolio">
+
+    <section id="projetos" class="projetos">
   <div class="interface">
     <h2 class="titulo">MEUS <span>PROJETOS</span></h2>
     <div class="flex">
 
       <!-- Projeto Dra. Cirurgiã -->
-      <div class="img-port" style="background-image: url(imagens/dra-cirurgia.png);">
+      <div class="img-proj" style="background-image: url(imagens/dra-cirurgia.png);">
         <a href="https://luanlucino.github.io/Portfolio-Dra.Cirurgi-/" target="_blank">
           <div class="overlay">Portfolio Dra. Cirurgiã</div>
         </a>
       </div>
 
       <!-- Projeto Cordel -->
-      <div class="img-port" style="background-image: url(imagens/projeto\ cordel.png);">
+      <div class="img-proj" style="background-image: url(imagens/projeto\ cordel.png);">
         <a href="https://luanlucino.github.io/Projeto-Cordel/" target="_blank">
           <div class="overlay">Projeto Cordel</div>
         </a>
       </div>
 
       <!-- Projeto 3 -->
-      <div class="img-port" style="background-image: url(imagens/portfolio.jpg);">
+      <div class="img-proj" style="background-image: url(imagens/portfolio.jpg);">
         <div class="overlay">Em breve</div>
       </div>
 
@@ -152,7 +153,7 @@
 
 
 
-    <section class="formulario">
+    <section id="contato" class="formulario">
       <div class="interface">
         <h2 class="titulo">FALA <span>COMIGO.</span></h2>
         <form action="https://formspree.io/f/seuID" method="POST">

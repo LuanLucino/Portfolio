@@ -64,7 +64,8 @@ header nav a:hover {
 }
 
 .btn-contato button {
-  padding: 10px 40px;
+  padding: 15px 40px;
+  margin-top: 10px;
   font-size: 18px;
   font-weight: 600;
   background-color: var(--cor2);
@@ -247,18 +248,18 @@ form .btn-enviar input:hover {
 }
 
 /* 🖼️ Portfólio */
-.portfolio {
+.projetos {
   padding: 80px 0;
 }
 
-.portfolio .flex {
+.projetos .flex {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 40px;
 }
 
-.img-port {
+.img-proj {
   flex: 1 1 calc(33.333% - 40px);
   max-width: calc(33.333% - 40px);
   height: 460px;
@@ -271,14 +272,14 @@ form .btn-enviar input:hover {
 }
 
 
-.img-port a {
+.img-proj a {
   display: block;
   width: 100%;
   height: 100%;
   text-decoration: none;
 }
 
-.img-port .overlay {
+.img-proj .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -296,11 +297,11 @@ form .btn-enviar input:hover {
   transition: 0.5s;
 }
 
-.img-port:hover .overlay {
+.img-proj:hover .overlay {
   opacity: 1;
 }
 
-.img-port:hover {
+.img-proj:hover {
   background-position: bottom;
 }
 
@@ -322,7 +323,7 @@ form .btn-enviar input:hover {
   transition: 0.5s;
 }
 
-.img-port:hover .overlay {
+.img-proj:hover .overlay {
   opacity: 1;
 }
 
@@ -423,4 +424,8 @@ footer .line-footer p a {
     max-width: 220px;
     margin-top: 20px;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
