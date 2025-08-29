@@ -1,4 +1,4 @@
-/* 🌈 Paleta de Cores e Tipografia */
+/* 🌈 PALETA DE CORES E TIPOGRAFIA */
 :root {
   --cor0: #ffffff;
   --cor1: #5c5c5c;
@@ -9,18 +9,21 @@
   --fonte-texto: 'Poppins', sans-serif;
 }
 
-/* 🔧 Reset e Base */
+/* 🔧 RESET E BASE */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--fonte-texto);
   background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
   color: var(--cor0);
-  scroll-behavior: smooth;
 }
 
 .interface {
@@ -35,7 +38,7 @@ body {
   gap: 40px;
 }
 
-/* 🧭 Cabeçalho */
+/* 🧭 CABEÇALHO */
 header {
   padding: 40px 0;
 }
@@ -81,7 +84,7 @@ form .btn-enviar input:hover {
   transform: scale(1.05);
 }
 
-/* 📱 Menu Mobile */
+/* 📱 MENU MOBILE */
 .btn-abrir-menu i {
   color: var(--cor2);
   font-size: 40px;
@@ -134,8 +137,7 @@ form .btn-enviar input:hover {
   z-index: 8888;
 }
 
-/* 🖼️ Topo do Site */
-/* 🖼️ Topo do Site */
+/* 🖼️ TOPO DO SITE */
 .topo-do-site {
   padding: 60px 0;
 }
@@ -167,15 +169,11 @@ form .btn-enviar input:hover {
 }
 
 @keyframes flutuar {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(30px);
-  }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(30px); }
 }
 
-/* 🛠️ Especialidades */
+/* 🛠️ ESPECIALIDADES */
 .especialidades {
   padding: 60px 0;
 }
@@ -208,7 +206,7 @@ form .btn-enviar input:hover {
   line-height: 1.5;
 }
 
-/* 👤 Sobre */
+/* 👤 SOBRE */
 .sobre {
   padding: 80px 0;
 }
@@ -233,7 +231,8 @@ form .btn-enviar input:hover {
 .btn-social {
   display: flex;
   gap: 16px;
-  margin-top: 20px;
+  margin-top: 10px;
+  justify-content: center;
 }
 
 .btn-social button {
@@ -247,16 +246,16 @@ form .btn-enviar input:hover {
   transition: 0.3s;
 }
 
-/* 🖼️ Portfólio */
+/* 🖼️ PROJETOS */
 .projetos {
-  padding: 80px 0;
+  padding: 40px 0;
 }
 
 .projetos .flex {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
+  justify-content: center;
+  gap: 30px;
 }
 
 .img-proj {
@@ -268,9 +267,11 @@ form .btn-enviar input:hover {
   border-radius: 30px;
   position: relative;
   cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   transition: background-position 8s;
+  border: none;
 }
-
 
 .img-proj a {
   display: block;
@@ -281,53 +282,40 @@ form .btn-enviar input:hover {
 
 .img-proj .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000000b8;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 30px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   font-size: 22px;
   font-weight: 600;
   color: var(--cor0);
   opacity: 0;
-  transition: 0.5s;
+  transition: opacity 0.5s ease;
+  padding: 20px;
+  text-align: center;
 }
 
 .img-proj:hover .overlay {
   opacity: 1;
 }
+
+
+.img-proj:hover .overlay {
+  opacity: 1;
+}
+
 
 .img-proj:hover {
   background-position: bottom;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000000b8;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--cor0);
-  opacity: 0;
-  transition: 0.5s;
-}
-
 .img-proj:hover .overlay {
   opacity: 1;
 }
 
-/* 📬 Formulário */
+/* 📬 FORMULÁRIO */
 .formulario {
   padding: 80px 0;
 }
@@ -368,7 +356,7 @@ form textarea {
   transition: 0.3s;
 }
 
-/* 🦶 Rodapé */
+/* 🦶 RODAPÉ */
 footer {
   padding: 40px 0;
   background-color: var(--cor3);
@@ -378,6 +366,10 @@ footer {
 footer .flex {
   justify-content: space-between;
   align-items: center;
+}
+
+footer .line-footer {
+  padding: 20px 0;
 }
 
 footer .line-footer {
@@ -399,7 +391,7 @@ footer .line-footer p a {
   text-decoration: none;
 }
 
-/* 📱 Responsividade */
+/* 📱 RESPONSIVIDADE */
 @media screen and (max-width: 1024px) {
   .flex {
     flex-direction: column;
@@ -424,8 +416,64 @@ footer .line-footer p a {
     max-width: 220px;
     margin-top: 20px;
   }
+
+  .btn-social {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 1024px) {
+  .projetos .flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .img-proj {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 3 / 2; /* proporção mais natural */
+  background-size: cover;
+  background-position: top center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-html {
-  scroll-behavior: smooth;
+
+  .img-proj .overlay {
+    opacity: 1;
+    font-size: 18px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+  }
+}
+
+
+
+  footer .flex {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  footer .line-footer {
+    padding: 10px 0;
+  }
+
+  footer .line-footer p {
+    font-size: 14px;
+  }
+
+  footer .line-footer p i {
+    font-size: 20px;
+  }
 }
