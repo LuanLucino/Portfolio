@@ -211,40 +211,49 @@ form .btn-enviar input:hover {
   padding: 80px 0;
 }
 
-.sobre .txt-sobre h2 {
-  font-size: 36px;
-  line-height: 1.2;
-  margin-bottom: 20px;
+.sobre .flex {
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 }
 
-.sobre .txt-sobre h2 span {
-  color: var(--cor2);
-  display: block;
-}
-
-.sobre .txt-sobre p {
-  margin: 20px 0;
-  text-align: justify;
-  font-size: 16px;
-}
-
-.btn-social {
+.img-sobre {
+  flex: 1;
   display: flex;
-  gap: 16px;
-  margin-top: 10px;
   justify-content: center;
 }
 
-.btn-social button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  background-color: var(--cor2);
-  font-size: 20px;
-  cursor: pointer;
-  transition: 0.3s;
+.img-sobre img {
+  max-width: 280px;
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
 }
+
+.txt-sobre {
+  flex: 2;
+}
+
+.txt-sobre h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.txt-sobre h2 span {
+  color: var(--cor2);
+}
+
+.txt-sobre p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.destaque {
+  color: var(--cor2);
+  font-weight: bold;
+}
+
 
 /* 🖼️ PROJETOS */
 .projetos {
@@ -475,5 +484,24 @@ footer .line-footer p a {
 
   footer .line-footer p i {
     font-size: 20px;
+  }
+}
+
+
+/*Responsividade Section Sobre*/
+
+@media screen and (max-width: 1024px) {
+  .sobre .flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .img-sobre img {
+    max-width: 220px;
+    margin-bottom: 20px;
+  }
+
+  .txt-sobre p {
+    text-align: center;
   }
 }
