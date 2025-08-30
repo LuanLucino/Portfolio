@@ -426,12 +426,35 @@ footer .line-footer p a {
     margin-top: 20px;
   }
 
-  .btn-social {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 20px;
-  }
+.btn-social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.btn-social a button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--cor2); /* cor azul padrão */
+  color: var(--cor3); /* ícone escuro */
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+.btn-social a button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
+}
+
+
 
   @media screen and (max-width: 1024px) {
   .projetos .flex {
