@@ -100,31 +100,57 @@ form .btn-enviar input:hover {
 }
 
 .menu-mobile {
-  background-color: var(--cor3);
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
-  width: 0%;
+  width: 100%;
+  max-width: 300px;
   height: 100vh;
-  overflow: hidden;
-  transition: 0.4s;
+  background-color: var(--cor3);
   z-index: 9999;
+  overflow-y: auto;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 20px;
 }
+.menu-mobile.abrir-menu {
+  display: flex;
+}
+
 
 .menu-mobile.abrir-menu {
-  width: 70%;
+  width: 100%; /* ou 70% se quiser só uma parte */
 }
 
-.menu-mobile nav ul {
-  text-align: right;
-  padding: 20px;
+.menu-mobile nav {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
+
+
+.menu-mobile nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* ou center, se quiser centralizado */
+  padding: 20px;
+  margin: 0;
+  gap: 10px; /* espaçamento entre os itens */
+}
+
+.menu-mobile nav ul li {
+  width: 100%;
+}
+
 
 .menu-mobile nav ul li a {
   display: block;
-  padding: 20px;
+  padding: 16px;
   color: var(--cor0);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
   transition: 0.3s;
 }
@@ -545,4 +571,21 @@ footer .line-footer p a {
   .logo img {
     max-width: 120px;
   }
+}
+
+
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.menu-mobile.fechar-animacao {
+  animation: slideOut 0.4s forwards;
 }
