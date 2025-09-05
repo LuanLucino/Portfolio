@@ -41,3 +41,16 @@ menuLinks.forEach(link => {
     }, 400); // mesmo tempo da animação
   });
 });
+
+
+setTimeout(() => {
+  destino.scrollIntoView({ behavior: "smooth" });
+
+  // Aplica destaque visual
+  destino.classList.add("destaque-secao");
+
+  // Remove o destaque após a animação
+  setTimeout(() => {
+    destino.classList.remove("destaque-secao");
+  }, 1200);
+}, 400);
