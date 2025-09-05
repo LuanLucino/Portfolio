@@ -44,10 +44,18 @@ header {
 }
 
 header .interface {
-  display: flex;
+  display: flex; 
   align-items: center;
   justify-content: space-between;
 }
+
+
+/* 🖼️ Estilo para a logo */
+.logo img {
+  max-width: 180px; /* Ajuste esse valor conforme necessário */
+  height: auto;
+}
+
 
 header nav ul {
   list-style: none;
@@ -526,5 +534,15 @@ footer .line-footer p a {
 
   .txt-sobre p {
     text-align: center;
+  }
+}
+
+
+
+/* Responsividade Logo */
+
+@media (max-width: 600px) {
+  .logo img {
+    max-width: 120px;
   }
 }
