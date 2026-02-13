@@ -54,3 +54,13 @@ setTimeout(() => {
     destino.classList.remove("destaque-secao");
   }, 1200);
 }, 400);
+
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("service-worker.js")
+      .then(() => console.log("PWA ativo"))
+      .catch(err => console.error("Erro no PWA:", err));
+  });
+}
