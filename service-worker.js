@@ -3,8 +3,8 @@ const CACHE_NAME = "portfolio-pwa-v1";
 const FILES_TO_CACHE = [
   "/",
   "/index.html",
-  "/style.css",
-  "/script.js",
+  "/assets/css/style.css",
+  "/assets/js/menu.js",
   "/manifest.json"
 ];
 
