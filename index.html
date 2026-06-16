@@ -3,210 +3,395 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio | Luan Lucino</title>
+  <title>Luan Lucino — Desenvolvedor Web</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Luan Lucino, desenvolvedor web especializado em criar experiências digitais modernas, responsivas e de alta performance.">
+  <meta name="keywords" content="desenvolvedor web, frontend, portfolio, sites responsivos, loja online, Luan Lucino">
+  <meta name="author" content="Luan Lucino">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Luan Lucino — Desenvolvedor Web">
+  <meta property="og:description" content="Transformando ideias em experiências digitais únicas.">
+  <meta property="og:type" content="website">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#050608">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
-  <script src="assets/js/menu.js" defer></script>
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#0f0f0f">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-
-
-  <!-- Fontes -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet" />
 
-  <!-- Ícones Bootstrap -->
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
+
+  <!-- No-JS fallback -->
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 <body>
-  <header>
-    <div class="interface">
-      <div class="logo">
-        <a href="#"><img src="assets/images/pessoa01.png" alt="Logotipo Luan Lucino" /></a>
-      </div>
 
-      <nav class="menu-desktop" aria-label="Menu principal">
-        <ul>
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#especialidades">Especialidades</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-        </ul>
+  <!-- ========== NAVBAR ========== -->
+  <header id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="assets/images/pessoa01.png" alt="Luan Lucino" />
+        <span>Luan <strong>Lucino</strong></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Menu principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#especialidades">Serviços</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato" class="nav-cta">Contato</a>
       </nav>
 
-      <div class="btn-contato">
-        <a href="#contato"><button> Contato</button></a>
-      </div>
-
-      <div class="btn-abrir-menu" id="btn-menu">
-        <i class="bi bi-list"></i>
-      </div>
-
-      <div class="menu-mobile" id="menu-mobile">
-        <div class="btn-fechar">
-          <i class="bi bi-x-lg"></i>
-        </div>
-        <nav aria-label="Menu mobile">
-          <ul>
-              <li><a href="#inicio">Início</a></li>
-              <li><a href="#especialidades">Especialidades</a></li>
-              <li><a href="#sobre">Sobre</a></li>
-              <li><a href="#projetos">Projetos</a></li>
-              <li><a href="#contato">Contato</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class="overlay-menumob" id="overlay-menu"></div>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
+  <!-- ========== MOBILE MENU ========== -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Menu mobile">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#especialidades">Serviços</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="mobile-social">
+      <a href="https://github.com/LuanLucino" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://www.instagram.com/luan_lucino/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/luanlucino/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
   <main>
-    <section id="inicio" class="topo-do-site">
-      <div class="interface">
-        <div class="flex">
-          <div class="txt-topo-site">
-            <h1>TRANSFORMANDO IDEIAS EM REALIDADE DIGITAL <span>.</span></h1>
-            <p>Criatividade e inovação andam lado a lado. Com uma combinação única de design impactante, funcionalidade intuitiva e otimização para resultados, estou pronto para criar a presença online dos seus sonhos.</p>
-            <div class="btn-contato">
-              <a href="#contato"><button>Entre em Contato</button></a>
+
+    <!-- ========== HERO ========== -->
+    <section id="inicio" class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="grid-overlay"></div>
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-text">
+          <div class="hero-badge reveal">
+            <span class="badge-dot"></span>
+            Disponível para novos projetos
+          </div>
+          <h1 class="hero-title reveal">
+            Olá, eu sou<br>
+            <span class="gradient-text">Luan Lucino</span>
+          </h1>
+          <p class="hero-role reveal">
+            <span id="typed"></span><span class="cursor" aria-hidden="true">|</span>
+          </p>
+          <p class="hero-desc reveal">
+            Crio experiências digitais que unem design impactante, código limpo e resultados reais. Do conceito ao produto final — com propósito em cada detalhe.
+          </p>
+          <div class="hero-actions reveal">
+            <a href="#projetos" class="btn-primary">
+              <span>Ver Projetos</span>
+              <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="#contato" class="btn-secondary">Falar Comigo</a>
+          </div>
+        </div>
+
+        <div class="hero-image reveal">
+          <div class="image-wrapper">
+            <img src="assets/images/pessoa01.png" alt="Foto de Luan Lucino" />
+            <div class="image-glow" aria-hidden="true"></div>
+            <div class="image-ring" aria-hidden="true"></div>
+          </div>
+          <div class="floating-card card-1" aria-hidden="true">
+            <i class="bi bi-code-slash"></i>
+            <span>Frontend Dev</span>
+          </div>
+          <div class="floating-card card-2" aria-hidden="true">
+            <i class="bi bi-palette"></i>
+            <span>UI Design</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ========== SOBRE ========== -->
+    <section id="sobre" class="sobre">
+      <div class="container">
+        <div class="sobre-grid">
+
+          <div class="sobre-image reveal">
+            <div class="img-frame">
+              <img src="assets/images/sobre.png" alt="Foto de Luan Lucino" loading="lazy" />
+              <div class="img-decoration" aria-hidden="true"></div>
+            </div>
+            <div class="experiencia-badge">
+              <span class="exp-num">2+</span>
+              <span class="exp-label">Anos de<br>Experiência</span>
             </div>
           </div>
 
-          <div class="img-topo-site">
-            <img src="assets/images/pessoa01.png" alt="Imagem de destaque" />
+          <div class="sobre-text reveal">
+            <div class="section-label">Sobre mim</div>
+            <h2>Desenvolvedor apaixonado por criar <span class="gradient-text">experiências únicas</span></h2>
+            <p>Me chamo Luan — desenvolvedor web especializado em transformar ideias em interfaces que encantam e convertem. Trabalho na interseção entre design e tecnologia, criando produtos digitais com propósito.</p>
+            <p>Cada projeto que assumo carrega atenção ao detalhe, performance e acessibilidade como prioridades inegociáveis.</p>
+
+            <div class="skills-grid">
+              <div class="skill-tag"><i class="bi bi-filetype-html" aria-hidden="true"></i> HTML5</div>
+              <div class="skill-tag"><i class="bi bi-filetype-css" aria-hidden="true"></i> CSS3</div>
+              <div class="skill-tag"><i class="bi bi-filetype-js" aria-hidden="true"></i> JavaScript</div>
+              <div class="skill-tag"><i class="bi bi-phone" aria-hidden="true"></i> Responsivo</div>
+              <div class="skill-tag"><i class="bi bi-lightning" aria-hidden="true"></i> Performance</div>
+              <div class="skill-tag"><i class="bi bi-universal-access" aria-hidden="true"></i> Acessibilidade</div>
+            </div>
+
+            <div class="sobre-social">
+              <a href="https://github.com/LuanLucino" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                <i class="bi bi-github" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.instagram.com/luan_lucino/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                <i class="bi bi-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/luanlucino/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                <i class="bi bi-linkedin" aria-hidden="true"></i>
+              </a>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
 
+    <!-- ========== ESPECIALIDADES ========== -->
     <section id="especialidades" class="especialidades">
-      <div class="interface">
-        <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
-        <div class="flex">
-          <div class="especialidades-box">
-            <i class="bi bi-code-square"></i>
-            <h3>Website</h3>
-            <p>Desenvolvimento de sites modernos, responsivos e otimizados para performance e SEO.</p>
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">O que ofereço</div>
+          <h2>Serviços que <span class="gradient-text">impulsionam</span> seu negócio</h2>
+          <p>Soluções sob medida para cada necessidade digital — do design à entrega final.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><i class="bi bi-window"></i></div>
+            <h3>Websites</h3>
+            <p>Sites modernos, rápidos e otimizados para converter visitantes em clientes. SEO-first desde a fundação.</p>
+            <ul class="service-features">
+              <li>Design Responsivo</li>
+              <li>SEO On-Page</li>
+              <li>Alta Performance</li>
+            </ul>
+            <div class="service-arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></div>
           </div>
 
-          <div class="especialidades-box">
-            <i class="bi bi-cart"></i>
+          <div class="service-card featured reveal">
+            <div class="service-badge">Mais Popular</div>
+            <div class="service-icon" aria-hidden="true"><i class="bi bi-shop"></i></div>
             <h3>Loja Online</h3>
-            <p>Criação de e-commerces com foco em conversão, usabilidade e integração com meios de pagamento.</p>
+            <p>E-commerces com foco em conversão, checkout otimizado e integração com meios de pagamento.</p>
+            <ul class="service-features">
+              <li>Carrinho Inteligente</li>
+              <li>Integração de Pagamentos</li>
+              <li>Gestão de Estoque</li>
+            </ul>
+            <div class="service-arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></div>
           </div>
 
-          <div class="especialidades-box">
-            <i class="bi bi-substack"></i>
-            <h3>Blog</h3>
-            <p>Plataformas de conteúdo com design atrativo e estrutura pensada para engajamento e leitura.</p>
+          <div class="service-card reveal">
+            <div class="service-icon" aria-hidden="true"><i class="bi bi-journal-richtext"></i></div>
+            <h3>Blog & Conteúdo</h3>
+            <p>Plataformas de conteúdo com CMS intuitivo, velocidade superior e estrutura para engajamento.</p>
+            <ul class="service-features">
+              <li>CMS Integrado</li>
+              <li>Otimização SEO</li>
+              <li>Analytics</li>
+            </ul>
+            <div class="service-arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></div>
           </div>
         </div>
       </div>
     </section>
 
-
-<section class="sobre" id="sobre">
-  <div class="interface flex">
-    <div class="img-sobre">
-      <img src="assets/images/sobre.png" alt="Foto de Luan">
-    </div>
-    <div class="txt-sobre">
-      <h2>Sobre <span>mim</span></h2>
-      <p>Me chamo Luan, desenvolvedor apaixonado por transformar ideias em experiências digitais. Gosto de criar interfaces que <span class="destaque">conectam pessoas</span> e resolvem problemas com elegância.</p>
-      <p>Atualmente focado em projetos que envolvem <span class="destaque">design responsivo</span>, acessibilidade e performance. Cada linha de código que escrevo carrega propósito e personalidade.</p>
-
-      <div class="btn-social">
-              <a href="https://github.com/LuanLucino" target="_blank"><button><i class="bi bi-github"></i></button></a>
-              <a href="https://www.instagram.com/luan_lucino/" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
-              <a href="https://www.linkedin.com/in/luanlucino/" target="_blank"><button><i class="bi bi-linkedin"></i></button></a>
-            </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-    
-
-
+    <!-- ========== PROJETOS ========== -->
     <section id="projetos" class="projetos">
-  <div class="interface">
-    <h2 class="titulo">MEUS <span>PROJETOS</span></h2>
-    <div class="flex">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Portfólio</div>
+          <h2>Projetos que <span class="gradient-text">falam por si</span></h2>
+          <p>Cada trabalho representa um desafio único, resolvido com criatividade e técnica.</p>
+        </div>
 
-      <!-- Projeto Dra. Cirurgiã -->
-      <div class="img-proj" style="background-image: url(assets/images/dra-cirurgia.png);">
-        <a href="https://luanlucino.github.io/Portfolio-Dra.Cirurgi-/">
-          <div class="overlay">Portfolio Dra. Cirurgiã</div>
-        </a>
-      </div>
+        <div class="projects-grid">
 
+          <article class="project-card reveal">
+            <div class="project-image" style="background-image: url(assets/images/dra-cirurgia.png)" role="img" aria-label="Screenshot do projeto Portfolio Dra. Cirurgiã">
+              <div class="project-overlay">
+                <a href="https://luanlucino.github.io/Portfolio-Dra.Cirurgi-/" target="_blank" rel="noopener" class="project-link" aria-label="Abrir projeto Portfolio Dra. Cirurgiã">
+                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">Portfolio</span>
+                <span class="tag">Saúde</span>
+              </div>
+              <h3>Portfolio Dra. Cirurgiã</h3>
+              <p>Site profissional para cirurgiã, com design elegante e foco em credibilidade e conversão de pacientes.</p>
+              <a href="https://luanlucino.github.io/Portfolio-Dra.Cirurgi-/" target="_blank" rel="noopener" class="project-cta">
+                Ver projeto <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
 
-        <!-- Projeto Doçuras da Dinda -->
-      <div class="img-proj" style="background-image: url(assets/images/docurasdadinda.png);">
-        <a href="https://luanlucino.github.io/Docuras-da-Dinda/">  
-  <div class="overlay">Doçuras da Dinda</div>
-</a>
-      </div>
+          <article class="project-card reveal">
+            <div class="project-image" style="background-image: url(assets/images/docurasdadinda.png)" role="img" aria-label="Screenshot do projeto Doçuras da Dinda">
+              <div class="project-overlay">
+                <a href="https://luanlucino.github.io/Docuras-da-Dinda/" target="_blank" rel="noopener" class="project-link" aria-label="Abrir projeto Doçuras da Dinda">
+                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">E-commerce</span>
+                <span class="tag">Gastronomia</span>
+              </div>
+              <h3>Doçuras da Dinda</h3>
+              <p>Loja online de confeitaria artesanal com catálogo visual apetitoso e experiência de pedido simplificada.</p>
+              <a href="https://luanlucino.github.io/Docuras-da-Dinda/" target="_blank" rel="noopener" class="project-cta">
+                Ver projeto <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
 
+          <article class="project-card reveal">
+            <div class="project-image" style="background-image: url(assets/images/projeto-cordel.png)" role="img" aria-label="Screenshot do Projeto Cordel">
+              <div class="project-overlay">
+                <a href="https://luanlucino.github.io/Projeto-Cordel/" target="_blank" rel="noopener" class="project-link" aria-label="Abrir Projeto Cordel">
+                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">Cultural</span>
+                <span class="tag">Literatura</span>
+              </div>
+              <h3>Projeto Cordel</h3>
+              <p>Plataforma cultural dedicada à literatura de cordel, unindo tradição nordestina com design contemporâneo.</p>
+              <a href="https://luanlucino.github.io/Projeto-Cordel/" target="_blank" rel="noopener" class="project-cta">
+                Ver projeto <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
 
-      <!-- Projeto Cordel -->
-      <div class="img-proj" style="background-image: url(assets/images/projeto-cordel.png);">
-        <a href="https://luanlucino.github.io/Projeto-Cordel/">
-          <div class="overlay">Projeto Cordel</div>
-        </a>
-      </div>
-
-      
-
-    </div>
-  </div>
-</section>
-
-
-
-    <section id="contato" class="formulario">
-      <div class="interface">
-        <h2 class="titulo">FALA <span>COMIGO.</span></h2>
-        <form action="https://formspree.io/f/seuID" method="POST">
-          <input type="text" name="nome" placeholder="Seu nome completo:" required />
-          <input type="email" name="email" placeholder="Seu e-mail:" required />
-          <input type="tel" name="celular" placeholder="Seu celular:" />
-          <textarea name="mensagem" placeholder="Sua mensagem:" required></textarea>
-          <div class="btn-enviar">
-            <input type="submit" value="ENVIAR" />
-          </div>
-        </form>
+        </div>
       </div>
     </section>
+
+    <!-- ========== CONTATO ========== -->
+    <section id="contato" class="contato">
+      <div class="container">
+        <div class="contato-grid">
+
+          <div class="contato-info reveal">
+            <div class="section-label">Contato</div>
+            <h2>Vamos criar algo <span class="gradient-text">incrível</span> juntos?</h2>
+            <p>Tem um projeto em mente? Estou pronto para ouvir sua ideia e transformá-la em realidade digital. Respondo em até 24h.</p>
+
+            <div class="contato-links">
+              <a href="mailto:luanlucino@hotmail.com" class="contato-item">
+                <div class="contato-icon" aria-hidden="true"><i class="bi bi-envelope"></i></div>
+                <div>
+                  <span class="contato-label">E-mail</span>
+                  <span class="contato-value">luanlucino@hotmail.com</span>
+                </div>
+              </a>
+            </div>
+
+            <a href="https://wa.me/5534996998882" target="_blank" rel="noopener" class="btn-whatsapp">
+              <i class="bi bi-whatsapp" aria-hidden="true"></i>
+              <span>Chamar no WhatsApp</span>
+            </a>
+
+            <div class="contato-social">
+              <a href="https://github.com/LuanLucino" target="_blank" rel="noopener" class="social-link" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
+              <a href="https://www.instagram.com/luan_lucino/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+              <a href="https://www.linkedin.com/in/luanlucino/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+          <div class="contato-form reveal">
+            <form action="https://formspree.io/f/seuID" method="POST" novalidate>
+              <div class="form-group">
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Conte sobre o seu projeto..." required></textarea>
+              </div>
+              <button type="submit" class="btn-primary full-width">
+                <span>Enviar Mensagem</span>
+                <i class="bi bi-send" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- ========== FOOTER ========== -->
   <footer>
-    <div class="interface">
-      <div class="line-footer">
-        <div class="flex">
-          <div class="logo-footer">
-            <img src="assets/images/logo.png" alt="Logotipo rodapé" />
-          </div>
-          <div class="btn-social">
-              <a href="https://github.com/LuanLucino" target="_blank"><button><i class="bi bi-github"></i></button></a>
-              <a href="https://www.instagram.com/luan_lucino/" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
-              <a href="https://www.linkedin.com/in/luanlucino/" target="_blank"><button><i class="bi bi-linkedin"></i></button></a>
-            </div>
-        </div>
-      </div>
-
-      <div class="line-footer borda">
-        <p><i class="bi bi-envelope"></i> <a href="mailto:luanlucino@hotmail.com">luanlucino@hotmail.com</a></p>
+    <div class="container footer-bar">
+      <span class="footer-copy">© 2025 <strong>Luan Lucino</strong>. Todos os direitos reservados.</span>
+      <nav class="footer-links" aria-label="Links do rodapé">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://github.com/LuanLucino" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/luan_lucino/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/luanlucino/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
       </div>
     </div>
   </footer>
+
+  <script src="assets/js/menu.js" defer></script>
 </body>
 </html>
