@@ -1429,6 +1429,7 @@ footer {
   .sobre,
   .especialidades,
   .projetos,
+  .linha-do-tempo,
   .contato { padding: 80px 0; }
 
   .section-header { margin-bottom: 48px; }
@@ -1443,6 +1444,261 @@ footer {
 
   .btn-primary,
   .btn-secondary { padding: 12px 22px; font-size: 14px; }
+}
+
+/* ================================================
+   LINHA DO TEMPO
+   ================================================ */
+.linha-do-tempo {
+  padding: 120px 0;
+  background: var(--bg-2);
+  position: relative;
+  overflow: hidden;
+}
+
+.linha-do-tempo::before,
+.linha-do-tempo::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+.linha-do-tempo::before {
+  top: 0;
+  background: linear-gradient(90deg, transparent, var(--primary) 50%, transparent);
+}
+
+.linha-do-tempo::after {
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, var(--accent) 50%, transparent);
+}
+
+/* ---------- Área do gráfico (fluida, sem barra de rolagem) ---------- */
+.tl-chart-scroll {
+  overflow: visible;
+  width: 100%;
+}
+
+.tl-chart-canvas {
+  position: relative;
+  width: 100%;
+}
+
+.tl-chart-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+}
+
+.tl-chart-grid-line {
+  stroke: var(--border);
+  stroke-dasharray: 4 6;
+  stroke-width: 1;
+}
+
+.tl-chart-area {
+  fill: url(#tl-area-gradient);
+  opacity: 0;
+  transition: opacity var(--t-slow) var(--ease);
+}
+
+.tl-chart-line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 6px var(--accent-glow));
+}
+
+/* Marcadores de ano */
+.tl-year-marker {
+  position: absolute;
+  top: -12px;
+  bottom: 0;
+  border-left: 1px dashed var(--border-hover);
+  pointer-events: none;
+}
+
+.tl-year-marker span {
+  position: absolute;
+  top: -34px;
+  left: 0;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  opacity: 0.75;
+  white-space: nowrap;
+}
+
+/* Pontos do gráfico */
+.tl-chart-point {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.tl-point-dot {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg-3);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow), 0 0 0 4px var(--bg-2);
+  opacity: 0;
+  transform: scale(0.3);
+  transition: opacity var(--t-slow) var(--ease), transform var(--t-slow) var(--ease);
+}
+
+.tl-point-dot.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Cards de conteúdo (alternam acima/abaixo do ponto) */
+.tl-point-card {
+  position: absolute;
+  left: 50%;
+  width: 152px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transition: opacity var(--t-slow) var(--ease), transform var(--t-slow) var(--ease),
+              border-color var(--t) var(--ease), box-shadow var(--t) var(--ease);
+}
+
+.tl-point-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+.tl-point-card.tl-card-top { bottom: calc(100% + 20px); transform: translate(-50%, 10px); }
+.tl-point-card.tl-card-top.is-visible { transform: translate(-50%, 0); }
+
+.tl-point-card.tl-card-bottom { top: calc(100% + 20px); transform: translate(-50%, -10px); }
+.tl-point-card.tl-card-bottom.is-visible { transform: translate(-50%, 0); }
+
+.tl-point-card.is-visible { opacity: 1; }
+
+.tl-months {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.tl-badge-current {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  margin-left: 6px;
+  animation: tl-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes tl-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.tl-langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.tl-tech-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  background: var(--accent-glow);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  border-radius: var(--radius-full);
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+.tl-desc {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-2);
+  margin: 0;
+}
+
+/* ---------- Modo lista — telas estreitas (definido via JS) ----------
+   Reaproveita .reveal/.visible (mesmo sistema de scroll reveal do site). */
+.tl-list {
+  position: relative;
+  padding-left: 36px;
+}
+
+.tl-list::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent-glow), var(--accent));
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.tl-list-year {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  opacity: 0.85;
+  margin: 28px 0 14px;
+}
+
+.tl-list-year:first-child { margin-top: 0; }
+
+.tl-list-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.tl-list-item:last-child { margin-bottom: 0; }
+
+.tl-list-dot {
+  position: absolute;
+  left: -26px;
+  top: 18px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: var(--bg-3);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+.tl-list-card {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  transition: border-color var(--t) var(--ease), box-shadow var(--t) var(--ease);
+}
+
+.tl-list-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-lg);
 }
 
 /* ================================================
